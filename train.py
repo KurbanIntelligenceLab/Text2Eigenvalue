@@ -4,7 +4,7 @@ import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from dataloader import Text2EnergyLoader, VectorAugmentation
+from dataloader import Text2EverythingLoader, VectorAugmentation
 from torch.utils.data import DataLoader, SubsetRandomSampler
 from tqdm import tqdm
 
@@ -69,7 +69,7 @@ def main():
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    dataset = Text2EnergyLoader(args.csv_file, transform=None)
+    dataset = Text2EverythingLoader(args.csv_file, transform=None)
     val_split = args.val_split
     num_train = len(dataset)
     indices = list(range(num_train))
