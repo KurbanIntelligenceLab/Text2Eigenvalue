@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
-from dataload import DFTCSVLoader
+from dataload import Text2EverythingLoader
 from model import Text2Energy
 
 # Set the criterion to L1 Loss
@@ -59,7 +59,7 @@ def main():
 
     custom_transforms = transforms.Compose([transforms.ToTensor()])
 
-    test_dataset = DFTCSVLoader(args.csv_file, transform=custom_transforms)
+    test_dataset = Text2EverythingLoader(args.csv_file, transform=custom_transforms)
     test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False)
 
     model = Text2Energy(args.input_dim, args.hidden_dim, args.output_dim, args.dropout).to(device)
