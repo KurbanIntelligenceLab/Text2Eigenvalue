@@ -5,7 +5,7 @@ from ast import literal_eval
 from torch.utils.data import Dataset
 
 
-class Text2EnergyLoader(Dataset):
+class Text2EverythingLoader(Dataset):
     def __init__(self, csv_file, transform=None):
         self.data = pd.read_csv(csv_file)
         self.data['textStringvector'] = self.data['textStringvector'].apply(literal_eval)
@@ -50,6 +50,55 @@ class VectorAugmentation:
         augmented_vector = torch.roll(vector, shift_amount)
         return augmented_vector
 
-# Example usage:
-# dataset = DFTCSVLoader(csv_file='data.csv', transform=VectorAugmentation(noise_std=0.1, shift_range=5, augmentation_prob=0.5))
-# dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+class QMDataloader(Dataset):
+    def __init__(self, csv_file, label_column, feature_columns, normalize_labels=True):
+        # Load the data from CSV
+        self.data = pd.read_csv(csv_file, low_memory=False)
+
+        # drop nan text embeddings
+        self.data = self.data.dropna(subset=['text_embedding'])
+
+        # Parse the text embeddings with robust handling
+        self.data['text_embedding'] = self.data['text_embedding'].apply(self.clean_and_parse_embedding)
+
+        # Filter out rows where text_embedding is None
+        self.data = self.data[self.data['text_embedding'].apply(lambda x: x is not None)]
+
+        # Convert text embeddings into PyTorch tensors
+        self.text_embeddings = [torch.Tensor(x) for x in self.data['text_embedding']]
+
+        # Prepare other features and labels
+        self.features = torch.Tensor(self.data[feature_columns].values)
+        self.labels = torch.Tensor(self.data[label_column].values)
+
+        # Normalize labels if required
+        if normalize_labels:
+            self.label_mean = self.labels.mean()
+            self.label_std = self.labels.std()
+            self.labels = (self.labels - self.label_mean) / self.label_std
+        else:
+            self.label_mean = 0
+            self.label_std = 1
+
+    def clean_and_parse_embedding(self, embedding_str):
+        try:
+            # Remove square brackets and split by commas
+            embedding_list = [float(item) for item in embedding_str.strip('[]').split(',')]
+            return embedding_list
+        except (ValueError, SyntaxError) as e:
+            # If parsing fails, return None to filter out later
+            print(f"Failed to parse embedding: {embedding_str}")
+            return None
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        features = self.features[idx]
+        label = self.labels[idx]
+        text_embedding = self.text_embeddings[idx]
+        return features, text_embedding, label
+
+    def denormalize_label(self, normalized_label):
+        return normalized_label * self.label_std + self.label_mean
+
