@@ -19,7 +19,7 @@ This official repository contains scripts for training and testing the `Text2Eve
 1. Clone the repository:
 
     ```bash
-    git clone git@github.com:CalciumNitrade/Text2Everything.git
+    git clone git@github.com:KurbanIntelligenceLab/Text2Everything.git
     cd Text2Everything
     ```
 
