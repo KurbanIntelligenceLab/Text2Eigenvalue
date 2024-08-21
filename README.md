@@ -1,7 +1,7 @@
 
 # Molecule Property Prediction with Text2Everything
 
-This official repository for the work `Text-To-Everything: Enhancing Quantum Chemistry with Transformer-Based Text Encoding and Physics-Informed Multilayer Perceptron` by Can Polat, Hasan Kurban, and Mustafa Kurban. This repository is built and maintained by Can Polat (CalciumNitrade) contains scripts for training and testing the `Text2Everything` model. 
+This official repository for the work `Text-To-Everything: Enhancing Quantum Chemistry with Transformer-Based Text Encoding and Physics-Informed Multilayer Perceptron` by Can Polat, Hasan Kurban, and Mustafa Kurban. This repository is built and maintained by Can Polat ([CalciumNitrade](https://github.com/CalciumNitrade)) contains scripts for training and testing the `Text2Everything` model. 
 
 ## Requirements
 
