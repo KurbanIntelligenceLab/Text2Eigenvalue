@@ -1,7 +1,7 @@
 
 # Molecule Property Prediction with Text2Everything
 
-This official repository for the work `Text-To-Everything: Enhancing Quantum Chemistry with Transformer-Based Text Encoding and Physics-Informed Multilayer Perceptron` by Can Polat, Hasan Kurban, and Mustafa Kurban. This repository is built and maintained by Can Polat ([CalciumNitrade](https://github.com/CalciumNitrade)) contains scripts for training and testing the `Text2Everything` model. 
+This official repository for the work `Enabling Ease of Access to Quantum Chemistry with Transformer-Based Text Encoding and Physics-Informed Multilayer Perceptron` by Can Polat, Hasan Kurban, and Mustafa Kurban. This repository is built and maintained by Can Polat ([CalciumNitrade](https://github.com/CalciumNitrade)) contains scripts for training and testing the `Text2Eigenvalue` model. 
 
 ## Requirements
 
@@ -19,8 +19,8 @@ This official repository for the work `Text-To-Everything: Enhancing Quantum Che
 1. Clone the repository:
 
     ```bash
-    git clone git@github.com:KurbanIntelligenceLab/Text2Everything.git
-    cd Text2Everything
+    git clone git@github.com:KurbanIntelligenceLab/Text2Eigenvalue.git
+    cd Text2Eigenvalue
     ```
 
 2. Install the required packages:
@@ -30,13 +30,13 @@ This official repository for the work `Text-To-Everything: Enhancing Quantum Che
     ```
 ## Data
 
-You can download the data for elements and molecules from the following link: [Text2Everything Data](https://tamucs-my.sharepoint.com/:f:/r/personal/hasan_kurban_tamu_edu/Documents/KIL-OneDrive/Can%20Polat/Text2Everything/data?csf=1&web=1&e=WfhepS)
+You can download the data for elements and molecules from the following link: [Text2Eigenvalue Data](https://tamucs-my.sharepoint.com/:f:/r/personal/hasan_kurban_tamu_edu/Documents/KIL-OneDrive/Can%20Polat/Text2Everything/data?csf=1&web=1&e=WfhepS)
 
 ## Usage
 
 ### Training
 
-The training script trains the `Text2Everything` model and validates it during training. It supports various configurations through command-line arguments.
+The training script trains the `Text2Eigenvalue` model and validates it during training. It supports various configurations through command-line arguments.
 
 #### Arguments
 
@@ -61,7 +61,7 @@ python train.py --csv_file "data.csv" --root "/path/to/root"
 
 ### Testing
 
-The test script evaluates the `Text2Everything` model on a test dataset.
+The test script evaluates the `Text2Eigenvalue` model on a test dataset.
 
 #### Arguments
 
