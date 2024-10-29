@@ -30,7 +30,7 @@ This official repository for the work `Enabling Ease of Access to Quantum Chemis
     ```
 ## Data
 
-You can download the data for elements and molecules from the following link: [Text2Eigenvalue Data](https://tamucs-my.sharepoint.com/:f:/r/personal/hasan_kurban_tamu_edu/Documents/KIL-OneDrive/Can%20Polat/Text2Everything/data?csf=1&web=1&e=WfhepS)
+You can download the data for elements and molecules from the following link: [Text2Eigenvalue Data](https://tamucs-my.sharepoint.com/:f:/g/personal/hasan_kurban_tamu_edu/EmmWLL3TyDFEnwat6bVnYFUBIOdlW35TE2rJTurvGVGkJw?e=j63P6z)
 
 ## Usage
 
