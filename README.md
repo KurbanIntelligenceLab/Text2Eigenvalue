@@ -1,7 +1,7 @@
 
 # Molecule Property Prediction with Text2Eigenvalue
 
-This official repository for the work `Enabling Ease of Access to Quantum Chemistry with Transformer-Based Text Encoding and Physics-Informed Multilayer Perceptron` by Can Polat, Hasan Kurban, and Mustafa Kurban. This repository is built and maintained by Can Polat ([CalciumNitrade](https://github.com/CalciumNitrade)) contains scripts for training and testing the `Text2Eigenvalue` model. 
+This official repository for the work `Enabling Ease of Access to Quantum Chemistry with Transformer-Based Text Encoding and Physics-Informed Multilayer Perceptron` by Can Polat, Hasan Kurban, and Mustafa Kurban. This repository is built and maintained by Can Polat ([CalciumNitrade](https://github.com/CalciumNitrade)) and contains scripts for training and testing the `Text2Eigenvalue` model. 
 
 ## Requirements
 
